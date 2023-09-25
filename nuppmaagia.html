@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>
+        Kiur on huvitav inimene
+    </title>
+</head>
+ 
+<body style="text-align:center;">
+ 
+    <h1 style="color:goldenrod;">
+        viikingid
+    </h1>
+ 
+    <p id="GFG_UP" style="font-size: 16px;
+                            color:black;
+                            font-weight: bold;">
+    </p>
+    <p id="GFG_DOWN" style="font-size: 16px;
+                            color: white;
+                            font-weight: bold;">
+    </p>
+ 
+    <button id="Button" onclick="gfg_Run()">
+        Hele teema
+    </button>
+    
+    <script>
+        let isBlack = false;
+        const el_up = document.getElementById("GFG_UP");
+        const el_down = document.getElementById("GFG_DOWN");
+        const str = "Vajuta nuppu, et muuta tausta värv";
+        const str2 = "Vajuta uuesti nuppu, et muuta tagasi";
+        const button = document.getElementById("Button");
+        
+        el_up.innerHTML = str;
+        el_down.innerHTML = str2;
+        
+        function gfg_Run() {
+            if (isBlack) {
+                document.body.style.background = 'white';
+                button.innerHTML = 'Hele teema';
+                isBlack = false;
+            } else {
+                document.body.style.background = 'black';
+                button.innerHTML = 'Tume teema';
+                isBlack = true;
+            }
+        }
+    </script>
+</body>
+</html>
