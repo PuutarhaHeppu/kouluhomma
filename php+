@@ -41,7 +41,7 @@
 <body>  <?php
     $firstname = "Marken ";
     $lastname = "Lemming ";
-    $ülesanne = "Ülesanne 2 ";
+    $ülesanne = "Ülesanne 3 ";
     $fullname = $firstname." ".$lastname;
     $kuupäev = "03.10.2023<br>";
     $n1 = 12;
