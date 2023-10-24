@@ -41,7 +41,7 @@
 <body>  <?php
     $firstname = "Marken ";
     $lastname = "Lemming ";
-    $ülesanne = "Ülesanne 3 ";
+    $ülesanne = "Ülesanne 2 ";
     $fullname = $firstname." ".$lastname;
     $kuupäev = "03.10.2023<br>";
     $n1 = 12;
@@ -159,6 +159,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 </html>
 
+<!--ülesanne 9-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
