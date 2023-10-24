@@ -126,6 +126,239 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 </html>
 
+<!--ülesanne 1-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  <?php
+    $firstname = "Marken ";
+    $lastname = "Lemming ";
+    $fullname = $firstname." ".$lastname;
+    $kuupäev = "03.10.2023<br>";
+    $ülesanne = "Ülesanne 1 ";
+    $birthdate = "<br>24.06.2004<br>";
+    $starsign = "kaksikud<br>";
+
+    echo $ülesanne;
+    echo $fullname;
+    echo $kuupäev;
+    echo $firstname;
+    echo $birthdate;
+    echo $starsign;
+    echo '“It’s My Life” – Dr. Alban';
+    echo '<br>"(\(\"';
+    echo "<br>( -.-)";
+    echo '<br>"o_(")(")"';
+    ?>
+</body>
+</html>
+<!--ülesanne 2-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  <?php
+    $firstname = "Marken ";
+    $lastname = "Lemming ";
+    $ülesanne = "Ülesanne 2 ";
+    $fullname = $firstname." ".$lastname;
+    $kuupäev = "03.10.2023<br>";
+    $n1 = 12;
+    $n2 = 10;
+    $li = $n1 + $n2;
+    $ko = $n1 * $n2;
+    $la = $n1 - $n2;
+    $ja = $n1 / $n2;
+    $jaak = $n1 % $n2;
+    $mm = 1000;
+    $cm = $mm/10;
+    $m = $mm/1000;
+    $külg1 = 7;
+    $külg2 = 10;
+    $diagonaal = sqrt($külg1**2 + $külg2**2);
+    $pindala = $külg1 * $külg2 / 2;
+    $ümbermõõt = $külg1 + $külg2 + $diagonaal;
+
+    echo $ülesanne;
+    echo $fullname;
+    echo $kuupäev;
+    echo $li."<br>";
+    echo $la."<br>";
+    echo $ko."<br>";
+    echo $ja."<br>";
+    echo $jaak."<br>";
+    echo $mm."mm<br>";
+    echo $cm."cm<br>";
+    echo $m."m<br>";
+    echo $diagonaal."<br>";
+    echo round($pindala)."<br>";
+    echo round($ümbermõõt)."<br>";
+    ?>
+</body>
+
+</html>
+
+<!--ülesanne 3-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h2>Sisesta mõõdud:</h2>
+<form method="POST">
+    <label for="aluse1">Alus 1:</label>
+    <input type="number" step="0.1" name="aluse1" required><br>
+
+    <label for="aluse2">Alus 2:</label>
+    <input type="number" step="0.1" name="aluse2" required><br>
+
+    <label for="kõrgus">Kõrgus:</label>
+    <input type="number" step="0.1" name="kõrgus" required><br>
+
+    <input type="submit" value="Arvuta">
+</form>
+<body>  <?php
+    $firstname = "Marken ";
+    $lastname = "Lemming ";
+    $fullname = $firstname." ".$lastname;
+    $kuupäev = "03.10.2023<br>";
+    $ülesanne = "Ülesanne 3 ";
+
+    echo $ülesanne;
+    echo $fullname;
+    echo $kuupäev;
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $alus1 = floatval($_POST["aluse1"]);
+    $alus2 = floatval($_POST["aluse2"]);
+    $kõrgus = floatval($_POST["kõrgus"]);
+    $trapetsi_pindala = 0.5 * ($alus1 + $alus2) * $kõrgus;
+    $rombi_ümbermõõt = 4 * sqrt(pow($alus1 / 2, 2) + pow($kõrgus, 2));
+
+    echo "Trapetsi pindala on " . number_format($trapetsi_pindala, 1) . " ruudus ja rombi ümbermõõt on " . number_format($rombi_ümbermõõt, 1);
+}
+?>
+</body>
+</html>
+
+<!--ülesanne 5-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  <?php
+    $firstname = "Marken ";
+    $lastname = "Lemming ";
+    $ülesanne = "Ülesanne 5";
+    $fullname = $firstname." ".$lastname;
+    $kuupäev = "03.10.2023<br>";
+    $nimed = array("Mari ", "Laura ", "Anna ", "Katarina ", "Sara ", "Pam ", "Lauren ", "Marie ");
+    $sort = sort($nimed);
+    $random = array_rand($nimed);
+
+    echo $ülesanne;
+    echo $fullname;
+    echo $kuupäev;
+    echo var_dump($nimed)."<br>";
+    print_r($nimed)."<br>";
+    echo $nimed[$random]."<br>";
+    echo $nimed[0];
+    echo $nimed[1];
+    echo $nimed[2]."<br>";
+    ?>
+</body>
+</html>
+
+<!--ülesanne 9-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+<?php
+    $firstname = "Marken ";
+    $lastname = "Lemming ";
+    $ülesanne = "Ülesanne 9 ";
+    $fullname = $firstname." ".$lastname;
+    $kuupäev = "17.10.2023<br>";
+    echo $ülesanne;
+    echo $fullname;
+    echo $kuupäev;
+?>
+<body>
+<form method="POST">
+        <label for="nimi">Sisestage oma nimi:</label>
+        <input type="text" name="nimi" id="nimi" required>
+        <input type="submit" value="Tervita">
+</form>       
+</body>
+<?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $nimi = $_POST["nimi"];
+        $vormindatud_nimi = ucfirst(strtolower($nimi));
+        echo "Tere, $vormindatud_nimi!<br>";
+    }
+    $text = "naute pikk naide";
+    $result = "";
+    for ($i = 0; $i < strlen($text); $i++) {
+        $result .= $text[$i] . ".";
+    }
+    echo $result;
+    $txt = "<br>Tyra Peeter, vittu küll";
+    $ropud = array("vittu", "Tyra");
+
+    function asendaRopud($tekst, $ropud) {
+        return str_replace($ropud, "*****", $tekst);
+    }
+    $txt = asendaRopud($txt, $ropud);
+    print_r($txt);
+?>
+<body>
+<form method="POST">
+        <label for="nimi">Sisestage oma nimi:</label>
+        <input type="text" name="nimi" id="nimi" required>
+        <input type="submit" value="OK">
+</form>
+</body>
+<?php
+$täpitähed = array("ä", "ö", "ü", "õ");
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nimi = $_POST["nimi"];
+    function asendatäpitähed($nimi, $täpitähed) {
+        $asendustähed = array("a", "o", "y", "o");
+        return str_replace($täpitähed, $asendustähed, $nimi);
+    }
+    $vormindatud_nimi = ucfirst(strtolower($nimi));
+    $email = asendatäpitähed($vormindatud_nimi, $täpitähed)."@tthk.ee";
+    
+    echo "Siin on teie kooli email: ".$email."<br>";
+}
+?>
+</body>
+</html>
+
 <!--ülesanne 5-->
 
 <!DOCTYPE html>
