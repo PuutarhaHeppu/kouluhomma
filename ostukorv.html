@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ostukorv</title>
+</head>
+<body>
+    <h1>Ostukorv</h1>
+
+    <form id="lisaToodeForm">
+        <label for="nimi">Toote nimi:</label>
+        <input type="text" id="nimi" name="nimi" required><br>
+
+        <label for="hind">Hind:</label>
+        <input type="number" id="hind" name="hind" step="0.01" required><br>
+
+        <label for="kogus">Kogus:</label>
+        <input type="number" id="kogus" name="kogus" required><br>
+
+        <button type="submit">Lisa Toode</button>
+    </form>
+
+    <h2>Ostukorv:</h2>
+    <ul id="ostukorv"></ul>
+
+    <h2>Ostukorvi summa:</h2>
+    <p id="summa"></p>
+
+</body>
+<script>
+const ostukorv = {
+    tooted: [
+        { nimi: "porgand", hind: 7, kogus: 7 },
+        { nimi: "kapsas", hind: 6, kogus: 72 },
+        { nimi: "maasikas", hind: 5, kogus: 27 },
+    ],
+};
+
+function uuendaOstukorvi() {
+    const ostukorviElement = document.getElementById("ostukorv");
+    ostukorviElement.innerHTML = "";
+
+    ostukorv.tooted.forEach((toode) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${toode.nimi} - ${toode.hind} EUR - Kogus: ${toode.kogus}`;
+        ostukorviElement.appendChild(listItem);
+    });
+
+    document.getElementById("summa").textContent = `Ostukorvi summa: ${koguSumma()} EUR`;
+}
+
+function koguSumma() {
+    let summa = 0;
+    for (const toode of ostukorv.tooted) {
+        summa += toode.hind * toode.kogus;
+    }
+    return summa;
+}
+
+function lisaToode(nimi, hind, kogus) {
+    ostukorv.tooted.push({ nimi, hind, kogus });
+    uuendaOstukorvi();
+}
+
+
+document.getElementById("lisaToodeForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const nimi = document.getElementById("nimi").value;
+    const hind = parseFloat(document.getElementById("hind").value);
+    const kogus = parseInt(document.getElementById("kogus").value);
+    if (!isNaN(hind) && !isNaN(kogus)) {
+        lisaToode(nimi, hind, kogus);
+    }
+});
+
+uuendaOstukorvi();
+</script>
+</html>
